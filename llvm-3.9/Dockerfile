@@ -15,4 +15,5 @@ RUN \
  (ninja || ninja -j1) && \
  ninja install && \
  rm -rf /llvm /build && \
- (file /usr/local/bin/* | awk -F: '/not stripped/ {print $1}' | xargs strip)
+ (file /usr/local/bin/* | awk -F: '/not stripped/ {print $1}' | xargs strip) && \
+ apt-get remove --auto-remove -y clang cmake curl file ninja-build xz-utils
