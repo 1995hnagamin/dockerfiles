@@ -18,3 +18,4 @@ RUN \
  cd llvm/build && \
  ninja install && \
  rm -rf /llvm /build
+RUN apt-get install -y git --no-install-recommends
