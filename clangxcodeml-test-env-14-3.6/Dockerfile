@@ -19,4 +19,3 @@ RUN \
  ninja install && \
  rm -rf /llvm /build
 RUN apt-get install -y git --no-install-recommends
-RUN apt-get install -y ca-certificates --no-install-recommends
