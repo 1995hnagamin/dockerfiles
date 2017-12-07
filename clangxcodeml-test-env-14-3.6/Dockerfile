@@ -9,8 +9,7 @@ RUN \
  mv /compiler-rt-3.6.2.src /llvm/projects/compiler-rt && \
  curl http://releases.llvm.org/3.6.2/cfe-3.6.2.src.tar.xz | tar xJf - && \
  mv /cfe-3.6.2.src /llvm/tools/clang && \
- mkdir llvm/build
-RUN \
+ mkdir llvm/build && \
  cd llvm/build && \
  CC=clang CXX=clang++ cmake -G Ninja -DCMAKE_BUILD_TYPE=MinSizeRel -DLLVM_TARGETS_TO_BUILD=X86 .. && \
  (ninja || ninja -j1) && \
