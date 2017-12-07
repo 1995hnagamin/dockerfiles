@@ -12,7 +12,7 @@ RUN \
  mkdir llvm/build
 RUN \
  cd llvm/build && \
- CC=clang CXX=clang++ cmake -G Ninja .. && \
+ CC=clang CXX=clang++ cmake -G Ninja -DCMAKE_BUILD_TYPE=MinSizeRel -DLLVM_TARGETS_TO_BUILD=X86 .. && \
  (ninja || ninja -j1) && \
  ninja install && \
  rm -rf /llvm /build
