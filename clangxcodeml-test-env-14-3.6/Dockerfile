@@ -1,6 +1,6 @@
 FROM ubuntu:14.04
 WORKDIR /
-RUN apt-get update && apt-get install -y build-essential libboost-all-dev libxml2-dev make pkg-config --no-install-recommends
+RUN apt-get update && apt-get install -y build-essential git libboost-all-dev libtinfo-dev libxml2-dev make pkg-config --no-install-recommends
 RUN \
  apt-get install -y clang cmake3 curl file python ninja-build xz-utils --no-install-recommends && \
  curl http://releases.llvm.org/3.6.2/llvm-3.6.2.src.tar.xz | tar xJf - && \
@@ -18,5 +18,3 @@ RUN \
  cd llvm/build && \
  ninja install && \
  rm -rf /llvm /build
-RUN apt-get install -y git --no-install-recommends
-RUN apt-get install -y libtinfo-dev --no-install-recommends
