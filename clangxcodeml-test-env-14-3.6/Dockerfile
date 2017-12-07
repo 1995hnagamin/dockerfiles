@@ -16,4 +16,4 @@ RUN \
  (ninja || ninja -j1) && \
  ninja install && \
  rm -rf /llvm /build
-RUN apt-get install -y --no-install-recommends xsltproc
+RUN apt-get update && apt-get install -y --no-install-recommends libxml2-utils xsltproc
