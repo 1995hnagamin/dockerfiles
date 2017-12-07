@@ -13,8 +13,6 @@ RUN \
 RUN \
  cd llvm/build && \
  CC=clang CXX=clang++ cmake -G Ninja .. && \
- (ninja || ninja -j1)
-RUN \
- cd llvm/build && \
+ (ninja || ninja -j1) && \
  ninja install && \
  rm -rf /llvm /build
