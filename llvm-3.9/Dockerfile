@@ -11,11 +11,10 @@ RUN \
  mv /cfe-3.9.1.src /llvm/tools/clang && \
  mkdir llvm/build && \
  cd llvm/build && \
- CC=clang CXX=clang++ cmake -G Ninja .. && \
+ CC=clang CXX=clang++ cmake -G Ninja -DCMAKE_BUILD_TYPE=MinSizeRel -DLLVM_TARGETS_TO_BUILD=X86 .. && \
  (ninja || ninja -j1) && \
  ninja install && \
  rm -rf /llvm /build && \
- (file /usr/local/bin/* | awk -F: '/not stripped/ {print $1}' | xargs strip) && \
  apt-get remove --auto-remove -y clang cmake curl file ninja-build xz-utils
 RUN apt-get install -y build-essential make --no-install-recommends
 RUN apt-get install -y pkg-config --no-install-recommends
