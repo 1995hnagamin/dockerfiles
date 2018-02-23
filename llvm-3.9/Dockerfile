@@ -16,6 +16,4 @@ RUN \
  ninja install && \
  rm -rf /llvm /build && \
  apt-get remove --auto-remove -y clang curl file ninja-build xz-utils
-RUN apt-get install -y build-essential make --no-install-recommends
-RUN apt-get install -y pkg-config --no-install-recommends
-RUN apt-get install -y libboost-all-dev libxml2-dev --no-install-recommends
+RUN apt-get install -y build-essential make libboost-all-dev --no-install-recommends
