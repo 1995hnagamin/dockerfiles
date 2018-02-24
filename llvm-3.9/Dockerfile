@@ -16,4 +16,3 @@ RUN \
  ninja install && \
  rm -rf /llvm /build && \
  apt-get remove --auto-remove -y clang cmake curl file ninja-build xz-utils
-RUN apt-get install -y build-essential make libboost-all-dev --no-install-recommends
