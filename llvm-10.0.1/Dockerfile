@@ -18,4 +18,3 @@ RUN CC=clang CXX=clang++ cmake -G Ninja -DCMAKE_BUILD_TYPE=MinSizeRel -DLLVM_TAR
 RUN (ninja || ninja -j1)
 RUN ninja install
 RUN rm -rf /llvm /build
-RUN apt-get remove --auto-remove -y clang cmake curl file ninja-build xz-utils
