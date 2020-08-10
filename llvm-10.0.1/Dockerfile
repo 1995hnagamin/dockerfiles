@@ -1,8 +1,10 @@
 FROM ubuntu:20.04
 WORKDIR /
-RUN \
- apt-get update && \
- apt-get install -y build-essential ca-certificates clang cmake curl file python ninja-build wget xz-utils --no-install-recommends && \
+ENV TZ=Asia/Tokyo
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update -y && apt-get upgrade -y
+RUN apt-get install -y tzdata
+RUN apt-get install -y build-essential ca-certificates clang cmake curl file python ninja-build wget xz-utils --no-install-recommends && \
  wget https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.1/llvm-10.0.1.src.tar.xz && \
  tar xJf llvm-10.0.1.src.tar.xz && \
  mv /llvm-10.0.1.src /llvm && \
